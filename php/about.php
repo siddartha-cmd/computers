@@ -36,13 +36,12 @@ session_start();
             </p>
         </div>
 
-        <div class="about-img">
-            <img src="../img/about-laptop.png" alt="Laptop">
-        </div>
+      
 
     </div>
 </section>
 
 <?php include '../includes/footer.php'; ?>
+
 </body>
 </html>

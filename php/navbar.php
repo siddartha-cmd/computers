@@ -12,17 +12,26 @@ session_start();
 </head>
 
 <body class="dark-bg">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">BuyComputers</div>
 
         <ul class="nav-links">
-            <li><a href="home.php">Home</a></li>
+            <li><a href="homepage.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             <li><a href="products.php">Products</a></li>
-            <li><a href="shop.php">Shop</a></li>
+           
             <li><a href="contact.php">Contact</a></li>
+            <li>
+            <a href="cart.php" class="cart-link">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">
+                    <?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?>
+                </span>
+            </a>
+        </li>
+        <li><a href="my_orders.php">My Orders</a></li>
         </ul>
 
         <div class="nav-actions">

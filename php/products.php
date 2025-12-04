@@ -17,11 +17,10 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
 
-    <!-- ✅ Correct CSS path -->
     <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
 </head>
 
-<body class="dark-bg">
+<body>
 
 <?php include 'navbar.php'; ?>
 
@@ -31,12 +30,26 @@ $result = $conn->query($sql);
     <div class="product-grid">
         <?php while($row = $result->fetch_assoc()) { ?>
             <div class="product-card">
-                <img src="../img/products/<?php echo $row['product_image']; ?>" alt="Laptop Image">
+
+                <!-- ✅ Product Image -->
+                <img src="../img/products/<?php echo $row['product_image']; ?>" alt="Product Image">
+
+                <!-- ✅ Product Name -->
                 <h3><?php echo $row['product_name']; ?></h3>
+
+                <!-- ✅ Product Description -->
                 <p class="description"><?php echo $row['product_description']; ?></p>
 
+                <!-- ✅ Product Price -->
                 <p class="price">$<?php echo $row['product_price']; ?></p>
-                <button class="product-btn">Add to Cart</button>
+
+                <!-- ✅ Add to Cart Form -->
+                <form action="add_to_cart.php" method="POST">
+    <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+    <button type="submit" class="product-btn">Add to Cart</button>
+</form>
+
+
             </div>
         <?php } ?>
     </div>

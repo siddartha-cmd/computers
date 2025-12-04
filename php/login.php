@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="login-bg">
+<?php include 'navbar.php'; ?>
 
 <div class="login-wrapper">
 
@@ -88,5 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </div>
+<?php include '../includes/footer.php'; ?>
+
 </body>
 </html>
